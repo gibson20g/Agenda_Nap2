@@ -4,14 +4,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        String name = null;
-        String number = null;
-        String mail = null;
-        String birthday = null;
-        Contato c = null;
+        String name;
+        name = null;
+        String number;
+        number = null;
+        String mail;
+        mail = null;
+        String birthday;
+        birthday = null;
+        Contato c;
+        c = null;
+        //String endereco = null;
+
 
         ArrayList<Contato> Contatos = new ArrayList<>();
-        boolean loop= true;
+        boolean loop = true;
 
         while (loop) {
             Scanner entradas = new Scanner(System.in);
@@ -28,35 +35,50 @@ public class Main {
                     mail = entradas.nextLine();
                     System.out.println("Dia e Mês Aniversário [exemplo 09/12]: ");
                     birthday = entradas.nextLine();
+                    //System.out.println();
+                    //endereco = entradas.nextLine();
                     c = new Contato(name, number, mail, birthday);
                     Contatos.add(c);
+                    System.out.println("");
                     break;
 
                 case 2:
-                    System.out.println("teste !!");
-                    break;
+                    System.out.println("Digite o nome do contato a ser pesquisado: ");
+                    Scanner input = new Scanner(System.in);
+                    String nome = input.nextLine();
+                    for (int i = 0; i < Contatos.size(); i++) {
+                        if (Contatos.get(i).getNome().equals(nome)) {
+                            System.out.println(Contatos.get(i).getNome());
+                            System.out.println("-------------------------");
+                            System.out.println("Nome: "+Contatos.get(i).getNome());
+                            System.out.println("Numero: "+ Contatos.get(i).getNumero());
+                            System.out.println("Email: "+Contatos.get(i).getEmail());
+                            System.out.println("Data: "+Contatos.get(i).getAniver());
 
+                            break;
+                        }
+
+                    }
+                    break;
                 default:
+                    System.out.println();
                     System.out.println("Opção Invalida");
             }
             System.out.println();
-            System.out.println("Cadastar novo contato [S] ou qualquer para não: ");
-            String fimLoop = new Scanner(System.in).next();
-            if (fimLoop.toUpperCase().equals("S")){
+            System.out.println("[1] - Voltar ao Menu\n[2] - Encerrar Programa: ");
+            int fimLoop = new Scanner(System.in).nextInt();
+            if (fimLoop == 1) {
                 loop = true;
-            }else{
+            } else {
                 loop = false;
             }
         }
-
-        if (Contatos.size() !=0) {
-            for(Contato lista : Contatos){
+        System.out.println("Resumo do Contatos Cadastrados.");
+        if (Contatos.size() != 0) {
+            for (Contato lista : Contatos) {
                 lista.resumoContatos();
 
             }
         }
-
     }
-
-
 }

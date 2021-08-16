@@ -1,13 +1,10 @@
 /**
-* @author Gabriel G A Farias
-* @author Laryssa G Moreira
-* @author João R V Barbosa
-* @author Adrian M B Moraes
+*
+
 * @since Ago 2021
 * @version 1.0
 
- */
-import java.util.ArrayList;
+*/
 public class Contato {
     private String nome;
     private String numero;
@@ -58,19 +55,11 @@ public class Contato {
     public void resumoContatos() {
         System.out.println();
         System.out.println("********** Resumo Contatos **********");
-        System.out.println("Nome: "+this.nome);
-        System.out.println("Número: "+this.numero);
-        System.out.println("E-mail: "+this.email);
-        System.out.println("Aniversário: "+this.aniver);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Número: " + this.numero);
+        System.out.println("E-mail: " + this.email);
+        System.out.println("Aniversário: " + this.aniver);
     }
 
-    public Contato [] achar(String palavra) {
-        ArrayList<Dados>todos=new ArrayList();
-        for(int i=0; i<Contatos.size();i++)
-        { Dados c=Contatos.get(i);
-            if (c.getDados().contains(palavra))
-                todos.add(c);
-        }
-    }
 }
 
