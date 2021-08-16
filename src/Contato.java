@@ -1,5 +1,9 @@
 /**
-*
+** @author Gabriel G A Farias
+ * * @author Laryssa G Moreira
+ * * @author João R V Barbosa
+ * * @author Adrian M B Moraes
+ * * @author João S T Gomes
 
 * @since Ago 2021
 * @version 1.0
@@ -24,10 +28,6 @@ public class Contato {
         return aniver;
     }
 
-    public void setAniverc(String aniver) {
-        this.aniver = aniver;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -48,10 +48,6 @@ public class Contato {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public void resumoContatos() {
         System.out.println();
         System.out.println("********** Resumo Contatos **********");
@@ -60,6 +56,7 @@ public class Contato {
         System.out.println("E-mail: " + this.email);
         System.out.println("Aniversário: " + this.aniver);
     }
+
 
 }
 
